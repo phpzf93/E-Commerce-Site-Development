@@ -1,9 +1,9 @@
 services:
   - type: web
     name: devservices-ecommerce
-    env: static
+    rootDir: workspace/shadcn-ui
     buildCommand: pnpm install && pnpm run build
-    staticPublishPath: ./dist
+    staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
