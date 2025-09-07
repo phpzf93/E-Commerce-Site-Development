@@ -1,4 +1,5 @@
-/// <reference types="vite/client" />
+// Minimal env type declarations to avoid requiring 'vite/client' during tsc build
+// on environments that skip devDependencies (e.g., Render with NODE_ENV=production)
 
 interface ImportMetaEnv {
   readonly VITE_MAGPIE_PUBLISHABLE_KEY: string
