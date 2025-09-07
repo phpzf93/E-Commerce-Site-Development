@@ -24,15 +24,19 @@ class MagpieClient {
       });
 
       if (!response.ok) {
-        const error: MagpieError = await response.json();
-        throw new Error(error.message || 'Failed to create checkout session');
-      }
-
-      return await response.json();
-    } catch (error) {
-      console.error('Magpie checkout session creation failed:', error);
-      throw error;
-    }
+              const error: MagpieError = await response.json();
+              throw new Error(
+                error.message || 
+                `Failed to create checkout session (${response.status}): ${
+                  error.code ? `[${error.code}] ` : ''
+                }${error.param ? `Invalid parameter: ${error.param}` : 'Unknown error'}`
+              );
+            }
+            return await response.json();
+          } catch (error) {
+            console.error('Magpie checkout session creation failed:', error);
+            throw error;
+          }
   }
 
   async redirectToCheckout(sessionId: string): Promise<void> {
