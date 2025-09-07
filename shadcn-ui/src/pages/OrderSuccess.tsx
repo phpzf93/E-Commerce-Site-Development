@@ -16,7 +16,7 @@ interface OrderDetails {
 export default function OrderSuccess() {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
-  const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
+  const [, setOrderDetails] = useState<OrderDetails | null>(null);
 
   useEffect(() => {
     // In a real application, you would fetch the order details using the session_id

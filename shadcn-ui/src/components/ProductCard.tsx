@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Product, useCart } from '@/context/CartContext';
 import { toast } from 'sonner';
 
