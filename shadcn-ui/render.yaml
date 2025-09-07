@@ -2,7 +2,7 @@ services:
   - type: web
     name: devservices-ecommerce
     rootDir: workspace/shadcn-ui
-    buildCommand: pnpm install && pnpm run build
+    buildCommand: pnpm install --frozen-lockfile --prod=false && pnpm run build
     staticPublishPath: dist
     routes:
       - type: rewrite
